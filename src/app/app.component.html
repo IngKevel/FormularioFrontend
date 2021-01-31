@@ -1,0 +1,59 @@
+<header>
+  <nav>
+      <img class="logo"  src="../assets/images/logo-dico.png">
+  </nav>
+</header>
+<body>
+  
+  <div class="content" id="formulario">
+
+      <h1 class="logo">Contacto <span> Dico</span></h1>
+
+      <div class="contact-wrapper animated bounceInUp">
+          <div class="contact-form">
+              <h3>Contactanos</h3>
+              <form action="main.php" method="POST">
+                  <p>
+                      <label>Nombre completo</label>
+                      <input #nombre id="nombre" type="text" name="nombre">
+                  </p>
+                  <p>
+                      <label>Correo</label>
+                      <input #correo type="email" name="correo">
+                  </p>
+                  <p>
+                      <label>Teléfono</label>
+                      <input #telefono type="tel" name="telefono">
+                  </p>
+                  <p class="block">
+                     <label>Mensaje</label> 
+                      <textarea #mensaje name="mensaje" rows="3"></textarea>
+                  </p>
+                  <ngx-recaptcha2 #captchaElem
+                      [siteKey]="siteKey">
+                    </ngx-recaptcha2>
+                  <p class="block">
+                    <button (click)="createUser(nombre.value, correo.value, telefono.value, mensaje.value)">
+                      Enviar
+                  </button>
+                  </p>
+              </form>
+          </div>
+          <div class="contact-info">
+              <h4>Más información</h4>
+              <ul>
+                  <li><i class="fas fa-map-marker-alt"></i> Tepotzotlán, Estado de México, C.P. 54605</li>
+                  <li><i class="fas fa-phone"></i> 01 (800) 719 1468</li>
+                  <li><i class="fas fa-envelope-open-text"></i> infodicocentro@dico.com.mx</li>
+              </ul>
+              <p>Visita nuestra pagina web</p>
+              <p>Dico.com.mx</p>
+          </div>
+      </div>
+  </div>
+  <div id="mensajeFinal">
+    <h1 class="logo">Mensaje<span> Enviado</span></h1>
+  </div>
+  <footer>
+      <p>Desarrollado y diseñado por Kevin Vélez</p>
+  </footer>
